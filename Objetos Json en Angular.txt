@@ -1,0 +1,39 @@
+Nombre:<input type="text" [(ngModel)]="nombre" /><br /><br />
+<button (click)="guardar()">Guardar</button>
+<button (click)="mostrar()">Mostrar</button><br /><br />
+<div *ngIf="visible">
+  <h2 *ngFor="let c of agenda">
+    {{ c }}
+  </h2>
+</div> 
+
+
+
+
+
+
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-agenda',
+  imports: [FormsModule, CommonModule],
+  templateUrl: './agenda.component.html',
+  styleUrl: './agenda.component.css',
+})
+export class AgendaComponent {
+  nombre: string;
+  visible: boolean = false;
+  agenda: string[] = [];
+  guardar(): void {
+    this.agenda.push(this.nombre);
+  }
+  mostrar(): void {
+    if (this.visible) {
+      this.visible = false;
+    } else {
+      this.visible = true;
+    }
+  }
+}

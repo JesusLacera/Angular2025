@@ -1,0 +1,11 @@
+<h4>Selector de Notas</h4>
+Nota:
+<input type="number" [(ngModel)]="nota" placeholder="Escribe tu nota" /><br />
+<button (click)="guardar()">Guardar</button>
+<button (click)="datos()">Datos</button><br /><br />
+<div>
+  Nota media:{{ media }}<br />
+  Nota mas alta {{ alta }}<br />
+  Nota mas baja {{ baja }}<br />
+  Total aprobados {{ aprobados }}<br />
+</div>

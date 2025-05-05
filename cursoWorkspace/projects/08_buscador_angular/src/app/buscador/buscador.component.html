@@ -1,0 +1,20 @@
+<p>Pagina de Busqueda</p>
+<input type="text" [(ngModel)]="temas" placeholder="Introduce la tematica" />
+<button (click)="filtrar()">Buscar</button>
+<h3>Resultados de la Busqueda</h3>
+<div>
+  <table border="1" *ngIf="visible">
+    {{
+      resultado.length
+    }}
+    resultados encontrados
+    <tr>
+      <th>Tematica</th>
+      <th>Direccion</th>
+    </tr>
+    <tr *ngFor="let t of resultado">
+      <td>{{ t.tematica }}</td>
+      <td>{{ t.direccion }}</td>
+    </tr>
+  </table>
+</div>
