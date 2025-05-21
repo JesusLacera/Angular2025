@@ -10,10 +10,10 @@ Telefono:<input type="text" [(ngModel)]="telefono" /><br /><br />
     <th>Email</th>
     <th>Telefono</th>
   </tr>
-  <tr *ngFor="let c of contactos" let i="index">
+  <tr *ngFor="let c of contactos">
     <td>{{ c.nombre }}</td>
     <td>{{ c.email }}</td>
     <td>{{ c.telefono }}</td>
-    <td><button (click="eliminar(i)" )>Eliminar</button></td>
+    <td><button (click)="eliminar(c)">Eliminar</button></td>
   </tr>
 </table>

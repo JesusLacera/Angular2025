@@ -1,0 +1,11 @@
+Apuntes 14/05/25
+
+Metodos http
+
+Get => Peticion de datos (envio de parametros por path variables o querystring)
+
+Post => Altas de datos (envio de datos en el cuerpo como form urlencoded o JSON)
+
+Put => Actualizacion de datos (envio de datos en el cuerpo como form-urlecoded o JSON)
+
+Delete => para eliminaciones
