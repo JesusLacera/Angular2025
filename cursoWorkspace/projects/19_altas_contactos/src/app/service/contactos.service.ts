@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, Observable } from 'rxjs';
+import { catchError, map, Observable, of } from 'rxjs';
 import { Contacto } from '../model/Contacto';
 
 @Injectable({
@@ -10,7 +10,15 @@ export class ContactosService {
   url = 'http://localhost:3000/contactos';
   constructor(private http: HttpClient) {}
 
+  // alta(contacto: Contacto): Observable<any> {
+  // return this.http.post(this.url + '/alta', contacto);
+  // }
+  //El posible error se captura en el back
+
   alta(contacto: Contacto): Observable<boolean> {
-    this.http.post(this.url, contacto);
+    return this.http.post(this.url + '/alta', contacto).pipe(
+      map(() => true),
+      catchError((e) => of(false))
+    );
   }
 }
