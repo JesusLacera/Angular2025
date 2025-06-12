@@ -1,4 +1,34 @@
-Buscar por Id cuenta<input type="text" [(ngModel)]="idCuenta" />
-Fecha Inicial Fecha Final
-<button>Buscar por Fecha</button>
-<button>Realizar un movimiento</button>
+<div>
+  Selecciona desde que fecha:
+  <input
+    title="fecha1"
+    type="date"
+    name="fechaInicial"
+    id=""
+    [(ngModel)]="fechaInicial"
+  />
+  <br /><br />
+  Selecciona hasta que fecha:
+  <input
+    title="fecha2"
+    type="date"
+    name="fechaFinal"
+    id=""
+    [(ngModel)]="fechaFinal"
+  />
+</div>
+<div>
+  <table>
+    <thead>
+      <th>Fecha Incial: {{ fechaInicial }}</th>
+      <th>Fecha Final: {{ fechaFinal }}</th>
+    </thead>
+    <tbody *ngFor="let m of movimientos">
+      <td>{{ m.fecha }}</td>
+      <td>{{ m.cantidad }}</td>
+      <td>{{ m.idCuenta }}</td>
+      <td>{{ m.operacion }}</td>
+    </tbody>
+  </table>
+  <button title="buscar" (click)="verMovimiento()">BUSCAR</button>
+</div>
